@@ -2,7 +2,10 @@
 
 This project automates the process of building OpenWrt firmware images for the Gemtek W1700k
 
-forked from https://github.com/glassd00r/Openwrt_Builder
+forked from https://github.com/OpenWRT-fanboy/w1700k-build
+which was forked from https://github.com/glassd00r/Openwrt_Builder
 which was forked from https://github.com/JuliusBairaktaris/Qualcommax_NSS_Builder
 
 fastbuild adapted from https://github.com/tete1030/openwrt-fastbuild-actions
+
+Thank you [OpenWRT-fanboy](https://github.com/OpenWRT-fanboy)
