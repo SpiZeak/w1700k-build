@@ -9,7 +9,7 @@ env:
   RELEASE_PREFIX: lumos-npu
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-jobs:  
+jobs:
   build:
     name: Build OpenWrt
     runs-on: ubuntu-24.04
@@ -46,8 +46,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: custom
+      - name: Clone ot-br-posix
+        run: |
+          git clone --depth 1 https://github.com/openthread/ot-br-posix.git
       - name: Update and install feeds
         run: |
+          cat custom/user/${{ env.RELEASE_PREFIX }}/feeds.diff >> feeds.conf
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       - name: Include custom files
