@@ -51,7 +51,7 @@ jobs:
           git clone --depth 1 https://github.com/openthread/ot-br-posix.git
       - name: Update and install feeds
         run: |
-          cat custom/user/${{ env.RELEASE_PREFIX }}/feeds.conf.default >> feeds.conf
+          cat feeds.conf.default >> feeds.conf
           cat custom/user/${{ env.RELEASE_PREFIX }}/feeds.diff >> feeds.conf
           ./scripts/feeds update -a
           ./scripts/feeds install -a
