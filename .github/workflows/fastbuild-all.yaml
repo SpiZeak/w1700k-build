@@ -11,7 +11,7 @@ env:
 jobs:
   build:
     name: ${{matrix.title}} ${{matrix.target}}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     # For `github.event`'s structure, see: https://developer.github.com/v3/activity/events/types/
     # Do not modify the trigger methods here, customize them in the `on` section
     if: |
@@ -55,12 +55,6 @@ jobs:
     - name: 3. Clean up for extra space
       if: env.SKIP_TARGET == '0' && env.TEST != '1'
       run: scripts/cisteps/build-openwrt/03-clean_up.sh
-
-    # https://github.com/docker/setup-qemu-action
-    - name: Set up QEMU
-      id: buildx-qemy
-      if: env.SKIP_TARGET == '0'
-      uses: docker/setup-qemu-action@v3
 
     # https://github.com/docker/setup-buildx-action
     - name: Set up Docker Buildx
