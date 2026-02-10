@@ -1,2 +1,2 @@
-src-git --force matter https://github.com/project-chip/matter-openwrt.git
+src-git --force matter https://github.com/project-chip/matter-openwrt.git^b01fa67c3487f06b25ce086ba5f58ec91a0247a9
 src-link openthread ot-br-posix/etc/openwrt
